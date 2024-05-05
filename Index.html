@@ -133,9 +133,12 @@
               <input type="text" class="form-control" id="assuntoInput" placeholder="Assunto">
           </div>
             <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              <button type="button" class="btn btn-success mt-3">Enviar</button>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Mensagem</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <button type="button" class="btn btn-success mt-3" id="enviarBtn">Enviar</button>
+            </div>
+            <div id="mensagemManutencao" class="alert alert-warning" style="display: none;">Desculpe, estamos em manutenção. Tente novamente mais tarde.</div>            
             </div>
           </section>
           <Footer class="text-center mt-6">
@@ -148,4 +151,11 @@
             </style>
           </Footer>
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('enviarBtn').addEventListener('click', function() {
+          document.getElementById('mensagemManutencao').style.display = 'block';
+      });
+  });
+</script>
 </html>
